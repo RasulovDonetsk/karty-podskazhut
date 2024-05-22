@@ -48,7 +48,7 @@ a:focus-visible {
 }
 
 .header {
-  padding-block-start: 10vi;
+  padding-block-start: 10%;
 }
 
 .heading {
@@ -65,9 +65,9 @@ a:focus-visible {
 
 .header__menu {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-block: currentColor solid 1px;
-  flex-direction: row;
   padding-block: 20px;
 }
 
@@ -92,9 +92,9 @@ a:focus-visible {
   font-weight: 400;
   font-size: 18px;
   line-height: 104%;
+  background-color: transparent;
   cursor: pointer;
   appearance: none;
-  background-color: transparent;
 }
 
 .header__theme-button:hover {
@@ -102,17 +102,17 @@ a:focus-visible {
 }
 
 .header__theme-button_is-active:disabled {
+  position: relative;
   font-weight: 700;
   pointer-events: none;
-  position: relative;
 }
 
 .header__theme-button_is-active::after {
   content: '';
   position: absolute;
+  z-index: -1;
   display: inline-block;
   background-color: var(--accent-color);
-  z-index: -1;
   inset-inline-start: -2px;
   inset-block-start: 13px;
   inline-size: 81px;
@@ -125,19 +125,25 @@ a:focus-visible {
 }
 
 .content-section {
-  padding-inline: 5vi;
+  padding-inline: 4.35vi;
+}
+
+@media (width <= 450px) {
+  .content-section {
+    padding-inline: 5.1vi;
+  }
 }
 
 .content__title {
+  margin-block-start: 7%;
+  margin-block-end: 2.5%;
   font-size: 30px;
-  margin-block-start: 7vi;
-  margin-block-end: 2.5vi;
 }
 
 .content__text-block {
   font-family: Raleway, Arial, Helvetica, sans-serif;
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
 }
 
 .content__text-block .content__paragraph:not(:last-child) {
@@ -147,9 +153,9 @@ a:focus-visible {
 .content__text-block_type_first-lettered
   .content__paragraph:first-child::first-letter {
   display: inline-block;
+  margin-inline-end: 1px;
   padding: 0 4px;
   font-weight: 700;
-  margin-inline-end: 1px;
   font-size: 30px;
   background-color: var(--accent-color);
 }
@@ -176,8 +182,8 @@ a:focus-visible {
 
 .content__list {
   position: relative;
-  list-style-type: none;
   padding-inline-start: 40px;
+  list-style-type: none;
 }
 
 .content__list li:not(:last-child) {
@@ -189,8 +195,8 @@ a:focus-visible {
   position: absolute;
   margin-block-start: 3px;
   background: url(../images/marker-light.svg) no-repeat center / cover;
-  block-size: 15px;
   inline-size: 15px;
+  block-size: 15px;
   inset-inline-start: 15px;
 }
 
@@ -200,9 +206,9 @@ a:focus-visible {
 
 .content__figure {
   position: relative;
-  margin-block: 7vi;
+  margin-block: 7%;
   inline-size: calc(100% + 5vi * 2);
-  inset-inline-end: 5vw;
+  inset-inline-end: 5%;
 }
 
 .content__picture-caption {
@@ -220,10 +226,10 @@ a:focus-visible {
 
 .content__card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-block-start: 7vi;
+  margin-block-start: 7%;
   border: currentColor solid 1px;
   aspect-ratio: 4/3;
 }
@@ -254,21 +260,21 @@ a:focus-visible {
 
 .content__card-subtitle {
   font-family: Raleway, Arial, Helvetica, sans-serif;
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   text-align: center;
 }
 
 .footer {
-  padding: 2.5%;
-  margin-block-start: 10vi;
+  margin-block-start: 10%;
   border-block-start: currentColor solid 1px;
+  padding: 2.5%;
 }
 
 .footer__copyright {
   color: var(--text-color);
   font-family: Raleway, Arial, Helvetica, sans-serif;
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   text-align: center;
 }
